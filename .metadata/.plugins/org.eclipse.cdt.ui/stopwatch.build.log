@@ -1,0 +1,36 @@
+08:28:15 **** Incremental Build of configuration Debug for project stopwatch ****
+make all 
+Building file: ../timer.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"timer.d" -MT"timer.o" -c -o "timer.o" "../timer.c"
+../timer.c: In function 'Timer1_setCallBack':
+../timer.c:104: warning: function return types not compatible due to 'volatile'
+Finished building: ../timer.c
+ 
+Building target: stopwatch.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,stopwatch.map -mmcu=atmega32 -o "stopwatch.elf"  ./gpio.o ./project.o ./timer.o   
+Finished building target: stopwatch.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S stopwatch.elf  >"stopwatch.lss"
+Finished building: stopwatch.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 stopwatch.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9954 bytes (30.4% Full)
+(.text + .data + .bootloader)
+
+Data:         28 bytes (1.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+08:28:16 Build Finished. 0 errors, 1 warnings. (took 1s.148ms)
+

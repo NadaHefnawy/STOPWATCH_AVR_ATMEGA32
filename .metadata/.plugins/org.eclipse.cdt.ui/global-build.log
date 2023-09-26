@@ -1,0 +1,188 @@
+10:57:03 **** Incremental Build of configuration Debug for project stopwatch ****
+make all 
+Building file: ../project.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"project.d" -MT"project.o" -c -o "project.o" "../project.c"
+In file included from ../project.c:3:
+c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:36:2: warning: #warning "This file has been moved to <util/delay.h>."
+In file included from c:/winavr-20100110/lib/gcc/../../avr/include/avr/delay.h:37,
+                 from ../project.c:3:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../project.c
+ 
+Building target: stopwatch.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,stopwatch.map -mmcu=atmega32 -o "stopwatch.elf"  ./project.o   
+Finished building target: stopwatch.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S stopwatch.elf  >"stopwatch.lss"
+Finished building: stopwatch.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 stopwatch.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    5660 bytes (17.3% Full)
+(.text + .data + .bootloader)
+
+Data:         12 bytes (0.6% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:24:35 **** Build of configuration Debug for project stopwatch ****
+make all 
+Building file: ../gpio.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"gpio.d" -MT"gpio.o" -c -o "gpio.o" "../gpio.c"
+Finished building: ../gpio.c
+ 
+Building file: ../project.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"project.d" -MT"project.o" -c -o "project.o" "../project.c"
+In file included from ../project.c:3:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../project.c:5: error: redefinition of typedef 'uint8'
+../std_types.h:32: error: previous declaration of 'uint8' was here
+../project.c: In function 'main':
+../project.c:51: error: too many arguments to function 'Timer1_init'
+make: *** [project.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+08:24:51 **** Incremental Build of configuration Debug for project stopwatch ****
+make all 
+Building file: ../project.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"project.d" -MT"project.o" -c -o "project.o" "../project.c"
+In file included from ../project.c:3:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../project.c: In function 'main':
+../project.c:51: error: too many arguments to function 'Timer1_init'
+make: *** [project.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+08:25:40 **** Incremental Build of configuration Debug for project stopwatch ****
+make all 
+Building file: ../project.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"project.d" -MT"project.o" -c -o "project.o" "../project.c"
+In file included from ../project.c:3:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../project.c
+ 
+Building file: ../timer.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"timer.d" -MT"timer.o" -c -o "timer.o" "../timer.c"
+../timer.c:12: warning: 'sec1' initialized and declared 'extern'
+../timer.c:12: warning: 'sec2' initialized and declared 'extern'
+../timer.c:12: warning: 'mins1' initialized and declared 'extern'
+../timer.c:12: warning: 'mins2' initialized and declared 'extern'
+../timer.c:12: warning: 'hours1' initialized and declared 'extern'
+../timer.c:12: warning: 'hours2' initialized and declared 'extern'
+../timer.c: In function 'Timer1_setCallBack':
+../timer.c:78: warning: function return types not compatible due to 'volatile'
+Finished building: ../timer.c
+ 
+Building target: stopwatch.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,stopwatch.map -mmcu=atmega32 -o "stopwatch.elf"  ./gpio.o ./project.o ./timer.o   
+./timer.o: In function `__vector_11':
+../timer.c:15: multiple definition of `sec1'
+./project.o:../project.c:18: first defined here
+./timer.o: In function `__vector_11':
+../timer.c:15: multiple definition of `sec2'
+./project.o:../project.c:18: first defined here
+./timer.o: In function `__vector_11':
+../timer.c:15: multiple definition of `mins1'
+./project.o:../project.c:18: first defined here
+./timer.o: In function `__vector_11':
+../timer.c:15: multiple definition of `mins2'
+./project.o:../project.c:18: first defined here
+./timer.o: In function `__vector_11':
+../timer.c:15: multiple definition of `hours1'
+./project.o:../project.c:18: first defined here
+./timer.o: In function `__vector_11':
+../timer.c:15: multiple definition of `hours2'
+./project.o:../project.c:18: first defined here
+make: *** [stopwatch.elf] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+08:26:52 **** Incremental Build of configuration Debug for project stopwatch ****
+make all 
+Building file: ../project.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"project.d" -MT"project.o" -c -o "project.o" "../project.c"
+In file included from ../project.c:3:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../project.c
+ 
+Building file: ../timer.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"timer.d" -MT"timer.o" -c -o "timer.o" "../timer.c"
+../timer.c:12: warning: 'sec1' initialized and declared 'extern'
+../timer.c:12: warning: 'sec2' initialized and declared 'extern'
+../timer.c:12: warning: 'mins1' initialized and declared 'extern'
+../timer.c:12: warning: 'mins2' initialized and declared 'extern'
+../timer.c:12: warning: 'hours1' initialized and declared 'extern'
+../timer.c:12: warning: 'hours2' initialized and declared 'extern'
+../timer.c: In function 'Timer1_setCallBack':
+../timer.c:104: warning: function return types not compatible due to 'volatile'
+Finished building: ../timer.c
+ 
+Building target: stopwatch.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,stopwatch.map -mmcu=atmega32 -o "stopwatch.elf"  ./gpio.o ./project.o ./timer.o   
+./timer.o: In function `__vector_11':
+../timer.c:15: multiple definition of `sec1'
+./project.o:../project.c:18: first defined here
+./timer.o: In function `__vector_11':
+../timer.c:15: multiple definition of `sec2'
+./project.o:../project.c:18: first defined here
+./timer.o: In function `__vector_11':
+../timer.c:15: multiple definition of `mins1'
+./project.o:../project.c:18: first defined here
+./timer.o: In function `__vector_11':
+../timer.c:15: multiple definition of `mins2'
+./project.o:../project.c:18: first defined here
+./timer.o: In function `__vector_11':
+../timer.c:15: multiple definition of `hours1'
+./project.o:../project.c:18: first defined here
+./timer.o: In function `__vector_11':
+../timer.c:15: multiple definition of `hours2'
+./project.o:../project.c:18: first defined here
+make: *** [stopwatch.elf] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+08:28:15 **** Incremental Build of configuration Debug for project stopwatch ****
+make all 
+Building file: ../timer.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"timer.d" -MT"timer.o" -c -o "timer.o" "../timer.c"
+../timer.c: In function 'Timer1_setCallBack':
+../timer.c:104: warning: function return types not compatible due to 'volatile'
+Finished building: ../timer.c
+ 
+Building target: stopwatch.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,stopwatch.map -mmcu=atmega32 -o "stopwatch.elf"  ./gpio.o ./project.o ./timer.o   
+Finished building target: stopwatch.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S stopwatch.elf  >"stopwatch.lss"
+Finished building: stopwatch.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 stopwatch.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    9954 bytes (30.4% Full)
+(.text + .data + .bootloader)
+
+Data:         28 bytes (1.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
